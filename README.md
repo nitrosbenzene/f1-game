@@ -6,6 +6,42 @@ The game is intended to work well on both:
 - mobile touch devices, including Samsung Galaxy S25 Ultra
 - desktop browsers on Windows using keyboard input
 
+## Playable prototype
+
+Prototype v0.1 is a small RaceFlow proof-of-fun build using a simplified Austria-inspired circuit.
+
+### Run locally
+
+No application build step is required.
+
+```bash
+python3 -m http.server 4173
+```
+
+Then open:
+
+```text
+http://localhost:4173
+```
+
+Desktop controls:
+
+- `A` = left action
+- `Space` = commit / center action
+- `D` = right action
+- `1`, `2`, `3` = overtake choices when available
+
+On mobile, play in landscape and use the three large touch zones.
+
+### Automated checks
+
+```bash
+npm install
+npm test
+```
+
+The Playwright smoke suite checks both desktop and mobile-landscape browser layouts.
+
 ## Project wiki
 
 The repository wiki is the source of truth for gameplay and development specifications.
@@ -24,4 +60,4 @@ See:
 
 ## Status
 
-Early gameplay design / pre-production.
+Playable prototype / early gameplay validation.
