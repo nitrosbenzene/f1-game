@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>RaceFlow Prototype v0.1</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hud">
+      <div class="brand">
+        <span class="eyebrow">F1 GAME · PROTOTYPE v0.1</span>
+        <strong>RaceFlow Austria</strong>
+      </div>
+
+      <div class="stats" aria-label="Race telemetry">
+        <div class="stat"><span>Lap</span><strong id="lap">1</strong></div>
+        <div class="stat"><span>Time</span><strong id="lapTime">0:00.000</strong></div>
+        <div class="stat"><span>Best</span><strong id="bestLap">--:--.---</strong></div>
+        <div class="stat"><span>Speed</span><strong id="speed">0 km/h</strong></div>
+        <div class="stat"><span>Tyres</span><strong id="tyres">100%</strong></div>
+        <div class="stat"><span>Flow</span><strong id="flow">x0</strong></div>
+      </div>
+    </header>
+
+    <section class="race-stage">
+      <canvas id="raceCanvas" aria-label="Simplified Austria circuit"></canvas>
+
+      <div id="cornerBadge" class="corner-badge" hidden>
+        <span id="cornerName">T1</span>
+        <strong id="cornerRole">BRAKE</strong>
+      </div>
+
+      <div id="resultToast" class="result-toast" hidden>
+        <strong id="resultLabel">PERFECT</strong>
+        <span id="resultDetail">Clean braking</span>
+      </div>
+
+      <div id="overtakePanel" class="overtake-panel" hidden>
+        <div>
+          <span class="eyebrow">ATTACK OPPORTUNITY</span>
+          <strong>Choose your move</strong>
+        </div>
+        <div class="overtake-actions">
+          <button type="button" data-overtake="inside"><kbd>1</kbd> Inside</button>
+          <button type="button" data-overtake="outside"><kbd>2</kbd> Outside</button>
+          <button type="button" data-overtake="wait"><kbd>3</kbd> Wait / Exit</button>
+        </div>
+      </div>
+
+      <div class="raceflow-panel" id="raceflowPanel">
+        <div class="cue-row">
+          <div>
+            <span class="eyebrow">NEXT INPUT</span>
+            <strong id="cueText">Get ready</strong>
+          </div>
+          <div id="cueAction" class="action-chip">SPACE</div>
+        </div>
+
+        <div class="timing-wrap" aria-label="RaceFlow timing window">
+          <div class="timing-bar">
+            <div class="timing-cursor" id="timingCursor"></div>
+          </div>
+          <div class="timing-labels">
+            <span>EARLY</span><span>PERFECT</span><span>LATE</span>
+          </div>
+        </div>
+
+        <div class="race-message" id="raceMessage">Press Start to begin.</div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Driving controls">
+      <button class="control-button" data-action="left" aria-label="Left action">
+        <kbd>A</kbd><span>LEFT</span>
+      </button>
+      <button class="control-button primary" data-action="center" aria-label="Center action">
+        <kbd>SPACE</kbd><span>COMMIT</span>
+      </button>
+      <button class="control-button" data-action="right" aria-label="Right action">
+        <kbd>D</kbd><span>RIGHT</span>
+      </button>
+    </section>
+
+    <footer class="footer">
+      <label class="toggle">
+        <input type="checkbox" id="aiToggle" checked />
+        <span>Rival AI</span>
+      </label>
+      <button type="button" id="resetButton" class="ghost-button">Reset session</button>
+    </footer>
+  </main>
+
+  <div class="start-overlay" id="startOverlay">
+    <div class="start-card">
+      <span class="eyebrow">RACEFLOW TEST</span>
+      <h1>Austria prototype</h1>
+      <p>
+        The car follows the circuit automatically. Execute the prompted actions when the timing cursor reaches the green center.
+        Mistakes cost speed, grip and tyre life.
+      </p>
+      <div class="start-grid">
+        <div><kbd>A</kbd><span>Left</span></div>
+        <div><kbd>SPACE</kbd><span>Commit</span></div>
+        <div><kbd>D</kbd><span>Right</span></div>
+      </div>
+      <p class="mobile-note">On mobile, use the three large touch zones at the bottom.</p>
+      <button type="button" id="startButton" class="start-button">Start session</button>
+    </div>
+  </div>
+
+  <div class="portrait-warning">Rotate your phone to landscape for the intended prototype layout.</div>
+
+  <script src="./src/game.js"></script>
+</body>
+</html>

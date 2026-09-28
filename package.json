@@ -1,0 +1,12 @@
+{
+  "name": "raceflow-f1-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "description": "RaceFlow browser prototype for the F1 game project",
+  "scripts": {
+    "test": "node --check src/game.js && playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.55.0"
+  }
+}
