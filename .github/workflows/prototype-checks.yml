@@ -1,0 +1,26 @@
+name: Prototype checks
+
+on:
+  push:
+    branches:
+      - prototype-v0.1
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
