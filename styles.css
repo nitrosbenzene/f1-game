@@ -541,3 +541,175 @@ kbd {
   .brand { min-width: 0; }
   .race-stage, #raceCanvas { min-height: 48vh; }
 }
+
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .app-shell {
+    height: 100dvh;
+    min-height: 0;
+    padding: 4px;
+    gap: 4px;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    overflow: hidden;
+  }
+
+  .brand,
+  .footer {
+    display: none;
+  }
+
+  .hud {
+    min-height: 34px;
+  }
+
+  .stats {
+    padding: 3px;
+    grid-template-columns: repeat(6, 1fr);
+    border-radius: 10px;
+  }
+
+  .stat {
+    padding: 3px 5px;
+    text-align: center;
+  }
+
+  .stat span {
+    display: none;
+  }
+
+  .stat strong {
+    margin-top: 0;
+    font-size: 11px;
+  }
+
+  .race-stage,
+  #raceCanvas {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .race-stage {
+    border-radius: 14px;
+  }
+
+  .raceflow-panel {
+    width: min(610px, 76%);
+    bottom: 4px;
+    padding: 6px 8px;
+    border-radius: 11px;
+  }
+
+  .cue-row strong {
+    font-size: 13px;
+  }
+
+  .cue-row .eyebrow,
+  .race-message,
+  .timing-labels {
+    display: none;
+  }
+
+  .action-chip {
+    min-width: 72px;
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .timing-wrap {
+    margin-top: 5px;
+  }
+
+  .timing-bar {
+    height: 12px;
+  }
+
+  .timing-cursor {
+    height: 20px;
+  }
+
+  .corner-badge,
+  .result-toast {
+    top: 5px;
+    padding: 6px 8px;
+    border-radius: 9px;
+  }
+
+  .corner-badge {
+    left: 5px;
+  }
+
+  .result-toast {
+    right: 5px;
+  }
+
+  .result-toast strong {
+    font-size: 13px;
+  }
+
+  .result-toast span {
+    display: none;
+  }
+
+  .overtake-panel {
+    top: 5px;
+    width: calc(100% - 110px);
+    padding: 6px 8px;
+  }
+
+  .overtake-panel > div:first-child {
+    display: none;
+  }
+
+  .overtake-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .overtake-actions button {
+    padding: 5px 7px;
+    font-size: 10px;
+  }
+
+  .controls {
+    min-height: 44px;
+    padding: 3px;
+    border-radius: 10px;
+  }
+
+  .control-button {
+    min-height: 40px;
+    border-radius: 8px;
+  }
+
+  .control-button span {
+    font-size: 10px;
+  }
+
+  .start-card {
+    max-height: calc(100dvh - 12px);
+    overflow: auto;
+    padding: 14px 18px;
+  }
+
+  .start-card h1 {
+    font-size: 32px;
+  }
+
+  .start-card p {
+    margin: 7px 0;
+    line-height: 1.35;
+    font-size: 12px;
+  }
+
+  .start-grid {
+    margin: 8px 0 4px;
+  }
+
+  .start-grid > div {
+    padding: 7px;
+  }
+
+  .start-button {
+    min-height: 42px;
+  }
+}
