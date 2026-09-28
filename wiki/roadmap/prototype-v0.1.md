@@ -1,6 +1,6 @@
 # Prototype v0.1: Austria RaceFlow Proof of Fun
 
-**Status:** DECIDED development target.
+**Status:** IMPLEMENTED baseline, awaiting hands-on playtest and tuning.
 
 ## Objective
 
