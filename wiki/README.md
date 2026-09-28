@@ -37,9 +37,13 @@ The same underlying gameplay must work naturally on both touch devices and deskt
 - [Overtaking and wheel-to-wheel combat](gameplay/overtaking.md)
 - [Mistakes, wear and consequences](gameplay/consequences.md)
 
+## Prototype tracks
+
+- [Austria prototype track](tracks/austria-prototype.md)
+
 ## Development roadmap
 
-- [Prototype v0.1](roadmap/prototype-v0.1.md)
+- [Prototype v0.1: Austria RaceFlow proof of fun](roadmap/prototype-v0.1.md)
 
 ## Specification status
 
